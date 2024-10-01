@@ -46,7 +46,7 @@ These packages will be installed automatically during the setup.
 
 ## Getting started
 
-A detailed tutorial of how to use different functions of the package can be found here: [GENBAIT Tutorial](https://github.com/camlab-bioml/genbait/blob/main/GENBAIT_tutorial.ipynb)
+A detailed tutorial of how to use different functions of the package can be found here: [GENBAIT Tutorial](https://github.com/camlab-bioml/genbait/blob/main/tutorials/GENBAIT_tutorial.ipynb)
 
 ## Authors
 
