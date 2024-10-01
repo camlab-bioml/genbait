@@ -24,7 +24,7 @@ To install the `genbait` package, follow these steps:
 
 1. **Install GENBAIT from GitHub using pip**:
     ```bash
-    pip install git+https://github.com/vesalkasmaeifar/genbait.git
+    pip install git+https://github.com/camlab-bioml/genbait.git
     ```
 
 2. **Ensure all dependencies are installed**:
