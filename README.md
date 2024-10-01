@@ -50,5 +50,6 @@ A detailed tutorial of how to use different functions of the package can be foun
 
 ## Authors
 
-This software is authored by: Vesal Kasmaeifar, Kieran R Campbell
+This software is authored by: Vesal Kasmaeifar, Kieran R Campbell  
+
 Lunenfeld-Tanenbaum Research Institute & University of Toronto
