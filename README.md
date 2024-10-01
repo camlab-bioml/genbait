@@ -18,6 +18,7 @@ GENBAIT requires Python 3.10 or higher. We recommend creating a virtual environm
 
 For Gene Ontology (GO) analysis, you'll need to install the `gprofiler-official` package, which is included with the GENBAIT dependencies.
 
+
 ## Installation
 
 To install the `genbait` package, follow these steps:
