@@ -8,7 +8,7 @@ GENBAIT is a Python package designed for bait (feature) selection in proximity l
 ---
 ## Overview
 
-![GENBAIT Overview](https://github.com/vesalkasmaeifar/genbait/blob/main/overview_figure.png)
+![GENBAIT Overview](https://github.com/camlab-bioml/genbait/blob/main/overview_figure.png)
 
 ## Requirements
 
