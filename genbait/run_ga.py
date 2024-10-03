@@ -55,7 +55,7 @@ def evalSubsetCorrelation(df_norm, n_components, subset_range, individual):
     
     # Penalize invalid individuals if their subset size is out of the valid range
     if not (subset_range[0] <= len(subset_indices) <= subset_range[1]):
-        return 1e-1000,
+        return 0,
 
     # Subset the data using the selected features (baits)
     subset_data = df_norm.to_numpy()[subset_indices, :]
