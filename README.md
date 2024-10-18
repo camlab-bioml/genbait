@@ -46,11 +46,16 @@ To install the `genbait` package, follow these steps:
 
 These packages will be installed automatically during the setup.
 
+Installation takes less than 2 minutes.
+
 ---
 
 ## Getting started
 
 A detailed tutorial of how to use different functions of the package can be found here: [GENBAIT Tutorial](https://github.com/camlab-bioml/genbait/blob/main/tutorials/GENBAIT_tutorial.ipynb)
+
+### Expected run time
+For 200 baits and 10 iterations for a panel size 50, running genbait takes approximately 30 minutes on a computer with 32 GB RAM.
 
 ## Authors
 
