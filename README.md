@@ -17,9 +17,39 @@ A **preprint** describing the method and introducing a novel benchmarking platfo
 
 GENBAIT requires Python 3.10 or higher. We recommend creating a virtual environment to ensure smooth installation.
 
-### Optional Dependencies
+## Git Installation
 
-For Gene Ontology (GO) analysis, you'll need to install the `gprofiler-official` package, which is included with the GENBAIT dependencies.
+To install GENBAIT, you first need Git. Follow the instructions below to install Git on your system.
+
+### For Windows
+
+1. **Download the Git installer**:
+   - Go to the official Git website: [https://git-scm.com/download/win](https://git-scm.com/download/win).
+   - Download the latest installer for Windows.
+
+2. **Run the installer**:
+   - Locate the downloaded file and double-click to open the installer.
+   - Follow the prompts in the setup wizard. You can keep the default options or customize the installation.
+
+
+### For Mac
+
+1. **Install Git using Homebrew**:
+   - If you have **Homebrew** installed, open the **Terminal** and run:
+     ```bash
+     brew install git
+     ```
+   - Homebrew will handle the download and installation of Git.
+
+
+2. **Verify the installation**:
+   - In **Terminal**, type the following command and press Enter:
+     ```bash
+     git --version
+     ```
+   - You should see a Git version number, confirming that Git is installed.
+
+---
 
 
 ## Installation
