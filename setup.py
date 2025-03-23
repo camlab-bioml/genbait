@@ -32,6 +32,7 @@ setup(
         'leidenalg',
         'torch',
         'pytorch_lightning',
+        'shap',
         'XGBoost'
     ],
     license='MIT',

@@ -75,6 +75,7 @@ To install the `genbait` package, follow these steps:
     - deap (for Genetic Algorithm operations)
     - pytorch
     - pytorch-lightning 
+    - shap
     - XGBoost
 
 These packages will be installed automatically during the setup.
