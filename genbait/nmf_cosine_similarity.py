@@ -54,5 +54,8 @@ def calculate_nmf_cosine_similarity(df_norm, selected_baits, n_components):
     # Calculate the mean cosine similarity of the diagonal values
     diagonal_mean = np.mean(diagonal)
 
+    # Calculate the min cosine similarity of the diagonal values
+    diagonal_min = np.min(diagonal)
+
     # Return the mean cosine similarity and the cosine similarity values for each component
-    return diagonal_mean, diagonal
+    return diagonal_mean, diagonal_min, diagonal

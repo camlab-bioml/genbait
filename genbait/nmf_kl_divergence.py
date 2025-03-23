@@ -75,5 +75,8 @@ def calculate_nmf_kl_divergence(df_norm, selected_baits, n_components):
     # Calculate the mean KL divergence from the diagonal values
     diagonal_mean = np.mean(diagonal)
 
+    # Calculate the min KL divergence from the diagonal values
+    diagonal_min = np.max(diagonal)
+
     # Return the mean KL divergence and the KL divergence values for each component
-    return diagonal_mean, diagonal
+    return diagonal_mean, diagonal_min, diagonal

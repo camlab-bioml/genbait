@@ -105,7 +105,7 @@ def create_initial_individual(subset_range, n_features):
         individual[idx] = 1
     return individual
 
-def run_ga(df_norm, n_components, subset_range, population_size=500, n_generations=1000, cxpb=0.5, mutpb=0.2, seed=4):
+def run_ga(df_norm, n_components, subset_range, population_size=500, n_generations=1000, cxpb=0.3, mutpb=0.1, seed=4):
     """
     Run the genetic algorithm to select the optimal subset of features (baits).
     
@@ -115,8 +115,8 @@ def run_ga(df_norm, n_components, subset_range, population_size=500, n_generatio
     - subset_range (tuple): Range for the number of selected features (min, max).
     - population_size (int): Number of individuals in the population. Default is 500.
     - n_generations (int): Number of generations to evolve. Default is 1000.
-    - cxpb (float): Probability of crossover. Default is 0.5.
-    - mutpb (float): Probability of mutation. Default is 0.2.
+    - cxpb (float): Probability of crossover. Default is 0.3.
+    - mutpb (float): Probability of mutation. Default is 0.1.
     - seed (int): Random seed for reproducibility. Default is 4.
     
     Returns:

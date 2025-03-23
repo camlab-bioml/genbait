@@ -16,6 +16,7 @@ def calculate_ga_results(hof, df_norm, n_components):
     Returns:
     - selected_baits (list): List of selected baits (features) chosen by the genetic algorithm.
     - diagonal_mean (float): Mean correlation between NMF components of the original and subset data.
+    - diagonal_min (float): Min correlation between NMF components of the original and subset data.
     - diagonal (np.ndarray): Array of correlation values for each component.
     """
 
@@ -59,5 +60,9 @@ def calculate_ga_results(hof, df_norm, n_components):
     # Calculate the mean correlation of the diagonal values
     diagonal_mean = np.mean(diagonal)
 
+    # Calculate the min correlation of the diagonal values
+    diagonal_min = np.min(diagonal)
+
     # Return the selected baits, the mean correlation, and the correlation values for each component
-    return selected_baits, diagonal_mean, diagonal
+    return selected_baits, diagonal_mean, diagonal_min, diagonal
+

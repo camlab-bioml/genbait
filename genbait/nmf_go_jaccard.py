@@ -92,13 +92,13 @@ def calculate_nmf_go_jaccard(df_norm, selected_baits, n_components, random_state
     scores_matrix_subset = nmf.fit_transform(subset_data)
     basis_matrix_subset = nmf.components_.T
 
-    # Step 2: Align the components of the original and subset data using the Hungarian algorithm
+    # Align the components of the original and subset data using the Hungarian algorithm
     cosine_similarity = np.dot(basis_matrix_original.T, basis_matrix_subset)
     cost_matrix = 1 - cosine_similarity
     row_ind, col_ind = linear_sum_assignment(cost_matrix)
     basis_matrix_subset_reordered = basis_matrix_subset[:, col_ind]
 
-    # Step 3: Assign labels to the original and subset components
+    # Assign labels to the original and subset components
     y_original = [np.argmax(basis_matrix_original[i, :]) for i in range(basis_matrix_original.shape[0])]
     y_subset = [np.argmax(basis_matrix_subset_reordered[i, :]) for i in range(basis_matrix_subset_reordered.shape[0])]
 
@@ -108,11 +108,11 @@ def calculate_nmf_go_jaccard(df_norm, selected_baits, n_components, random_state
     basis_original_df['Label'] = y_original
     basis_subset_reordered_df['Label'] = y_subset
 
-    # Step 4: Perform GO analysis for both the original and subset clusters
+    # Perform GO analysis for both the original and subset clusters
     top_native_original = process_go_analysis_parallel(basis_original_df.groupby('Label'))
     top_native_subset = process_go_analysis_parallel(basis_subset_reordered_df.groupby('Label'))
 
-    # Step 5: Calculate the Jaccard index for each label
+    # Calculate the Jaccard index for each label
     jaccard_indices = {}
     for label in top_native_original:
         set1 = top_native_original[label]
@@ -120,8 +120,11 @@ def calculate_nmf_go_jaccard(df_norm, selected_baits, n_components, random_state
         jaccard_index = calculate_jaccard_index(set1, set2)
         jaccard_indices[label] = jaccard_index
 
-    # Step 6: Calculate the mean Jaccard index across all components
+    # Calculate the mean Jaccard index across all components
     mean_jaccard_index = np.mean(list(jaccard_indices.values()))
 
+    # Calculate the min Jaccard index across all components
+    min_jaccard_index = np.min(list(jaccard_indices.values()))
+
     # Return the mean Jaccard index and the Jaccard indices for each component
-    return mean_jaccard_index, jaccard_indices
+    return mean_jaccard_index, min_jaccard_index, jaccard_indices

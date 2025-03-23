@@ -1,5 +1,5 @@
 import genbait as gb
-
+gb.run_nn
 # Set parameters for the analysis
 input_directory = 'input_files/' # path to SAINT inout file and other inputs
 output_directory = 'output_files/'  # path to save the outpus
@@ -50,34 +50,40 @@ gb.save_ga_results(
 # )
 
 # Calculate GA results: best individual (optimal bait subset), mean correlation, and per-component correlations
-selected_baits, mean_nmf_correlation, all_nmf_correaltions = gb.calculate_ga_results(hof, df_norm, n_components)
+selected_baits, mean_nmf_correlation, min_nmf_correlation, all_nmf_correaltions = gb.calculate_ga_results(hof, df_norm, n_components)
 print(f"Best Individual (Selected Baits): {selected_baits}")  # List of selected baits
 print(f"Mean Correlation: {mean_nmf_correlation}")  # Mean correlation between NMF components of original and subset data
+print(f"Mean Correlation: {min_nmf_correlation}")  # Min correlation between NMF components of original and subset data
 print(f"Correlations for each component: {all_nmf_correaltions}")  # Correlation values for each component
 
 # Calculate NMF cosine similarity between the full dataset and the selected bait subset
 # Cosine similarity measures how close the NMF basis components are between the original and subset data
-mean_nmf_cos_similarity_score, all_nmf_cos_similarity_scores = gb.calculate_nmf_cosine_similarity(df_norm, selected_baits, n_components)
+mean_nmf_cos_similarity_score, min_nmf_cos_similarity_score, all_nmf_cos_similarity_scores = gb.calculate_nmf_cosine_similarity(df_norm, selected_baits, n_components)
 print(f"Mean NMF Cosine Similarity: {mean_nmf_cos_similarity_score}")  # Mean cosine similarity
+print(f"Mean NMF Cosine Similarity: {min_nmf_cos_similarity_score}")  # Min cosine similarity
 print(f"Cosine Similarity values for each component: {all_nmf_cos_similarity_scores}")  # Cosine similarity for each component
 
 # Calculate the KL divergence between the NMF basis components of the original and subset data
 # KL divergence measures the difference in probability distributions (the closer to 0, the more similar)
-mean_nmf_kl_divergence_score, all_nmf_kl_divergence_scores = gb.calculate_nmf_kl_divergence(df_norm, selected_baits, n_components)
+mean_nmf_kl_divergence_score, max_nmf_kl_divergence_score, all_nmf_kl_divergence_scores = gb.calculate_nmf_kl_divergence(df_norm, selected_baits, n_components)
 print(f"Mean NMF KL Divergence: {mean_nmf_kl_divergence_score}")  # Mean KL divergence
+print(f"Mean NMF KL Divergence: {max_nmf_kl_divergence_score}")  # Max KL divergence
 print(f"KL Divergence values for each component: {all_nmf_kl_divergence_scores}")  # KL divergence for each component
 
 # Calculate the GO Jaccard index to measure the overlap of Gene Ontology terms between clusters
 # Jaccard index measures the similarity of the GO terms of preys between the original and subset data
-mean_nmf_go_jaccard_index, all_nmf_go_jaccard_indices = gb.calculate_nmf_go_jaccard(df_norm, selected_baits, n_components=n_components)
-print(f"Mean NMF GO Jaccard index: {mean_nmf_go_jaccard_index}")  # Mean KL divergence
-print(f"GO Jaccard index values for each component: {all_nmf_go_jaccard_indices}")  # KL divergence for each component
+mean_nmf_go_jaccard_index, min_nmf_go_jaccard_index, all_nmf_go_jaccard_indices = gb.calculate_nmf_go_jaccard(df_norm, selected_baits, n_components=n_components)
+print(f"Mean NMF GO Jaccard index: {mean_nmf_go_jaccard_index}")  # Mean GO Jaccard index
+print(f"Mean NMF GO Jaccard index: {min_nmf_go_jaccard_index}")  # Min GO Jaccard index
+print(f"GO Jaccard index values for each component: {all_nmf_go_jaccard_indices}")  # GO Jaccard index for each component
 
 # Calculate Adjusted Rand Index (ARI) to measure the similarity between cluster assignments
 # ARI compares the clustering of the original dataset and the selected bait subset after applying NMF
 nmf_ari_score = gb.calculate_nmf_ari(df_norm, selected_baits, n_components)
 print(f"NMF Adjusted Rand Index (ARI): {nmf_ari_score}")  # ARI score between original and subset clusters
 
+min_nmf_purity_score = gb.calculate_min_nmf_purity(df_norm, selected_baits, n_components)
+print(f"Min NMF purity score: {min_nmf_purity_score}")  # Min NMF purity score between original and subset clusters
 
 
 # Calculate the percentage of remaining preys (proteins) in the selected bait subset

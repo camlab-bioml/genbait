@@ -8,7 +8,7 @@ setup(
     version='1.0.0',
     author='Vesal Kasmaeifar',
     author_email='vesal.kasmaeifar@mail.utoronto.ca',
-    description='A python package for proximity labeling data feature selection',
+    description='A python package for proximity labeling data feature (bait) selection',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/vesalkasmaeifar/genbait',
@@ -30,6 +30,9 @@ setup(
         'gprofiler-official',
         'igraph',
         'leidenalg',
+        'torch',
+        'pytorch_lightning',
+        'XGBoost'
     ],
     license='MIT',
 )
