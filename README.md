@@ -5,17 +5,22 @@
 
 GENBAIT is a Python package designed for bait (feature) selection in proximity labeling data using genetic algorithms. 
 
-A **preprint** describing the method and introducing a novel benchmarking platform is available: [Kasmaeifar et al. (2024) _Computational design and evaluation of optimal bait sets for scalable proximity proteomics_](https://www.biorxiv.org/content/10.1101/2024.10.03.616533v1)
-
+A **preprint** describing the method and introducing a novel benchmarking platform is available:  
+[Kasmaeifar et al. (2024) _Computational design and evaluation of optimal bait sets for scalable proximity proteomics_](https://www.biorxiv.org/content/10.1101/2024.10.03.616533v1)
 
 ---
+
 ## Overview
 
 ![GENBAIT Overview](https://github.com/camlab-bioml/genbait/blob/main/overview_figure.png)
 
+---
+
 ## Requirements
 
 GENBAIT requires Python 3.10 or higher. We recommend creating a virtual environment to ensure smooth installation.
+
+---
 
 ## Git Installation
 
@@ -31,8 +36,7 @@ To install GENBAIT, you first need Git. Follow the instructions below to install
    - Locate the downloaded file and double-click to open the installer.
    - Follow the prompts in the setup wizard. You can keep the default options or customize the installation.
 
-
-### For Mac
+### For macOS
 
 1. **Install Git using Homebrew**:
    - If you have **Homebrew** installed, open the **Terminal** and run:
@@ -40,7 +44,6 @@ To install GENBAIT, you first need Git. Follow the instructions below to install
      brew install git
      ```
    - Homebrew will handle the download and installation of Git.
-
 
 2. **Verify the installation**:
    - In **Terminal**, type the following command and press Enter:
@@ -51,6 +54,33 @@ To install GENBAIT, you first need Git. Follow the instructions below to install
 
 ---
 
+## Build Tools Installation
+
+Some GENBAIT dependencies (such as `shap`, `xgboost`, or `leidenalg`) require system-level C++ build tools to compile extensions.
+
+### For Windows
+
+1. **Download Microsoft C++ Build Tools**:  
+   [https://visualstudio.microsoft.com/visual-cpp-build-tools/](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+
+2. **In the installer, select the following**:
+   - **C++ build tools** workload
+   - **MSVC v14 or later** (e.g., v142 or v143)
+   - **Windows 10 or 11 SDK**
+
+3. **Install the components** and restart your terminal (or system).
+
+> If these tools are missing, you may encounter errors like:  
+> `error: Microsoft Visual C++ 14.0 or greater is required`
+
+### For macOS
+
+1. **Install Xcode Command Line Tools**:  
+   Open Terminal and run:
+   ```bash
+   xcode-select --install
+
+---
 
 ## Installation
 
