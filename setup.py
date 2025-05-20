@@ -52,10 +52,11 @@ setup(
         'gprofiler-official',
         'igraph',
         'leidenalg',
+        'XGBoost'
         'torch',
         'pytorch_lightning',
         'shap',
-        'XGBoost'
+        
     ],
     license='MIT',
 )
