@@ -1,7 +1,8 @@
 # GENBAIT: Genetic Algorithm for Bait Selection
 
+[![DOI](https://zenodo.org/badge/865738565.svg)](https://doi.org/10.5281/zenodo.16579445)
 ![build](https://img.shields.io/badge/Build-passing-brightgreen)
-![Python version](https://img.shields.io/badge/Python-3.10-blue)
+![Python version](https://img.shields.io/badge/Python-3.10-blue
 
 GENBAIT is a Python package designed for bait (feature) selection in proximity labeling data using genetic algorithms. 
 
@@ -126,3 +127,8 @@ For 200 baits and 10 iterations for a panel size 50, running genbait takes appro
 This software is authored by: Vesal Kasmaeifar, Kieran R Campbell  
 
 Lunenfeld-Tanenbaum Research Institute & University of Toronto
+
+## Citation
+
+If you use GENBAIT, please cite the archived version:
+https://doi.org/10.5281/zenodo.16579445
