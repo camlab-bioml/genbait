@@ -6,7 +6,7 @@
 
 GENBAIT is a Python package designed for bait (feature) selection in proximity labeling data using genetic algorithms. 
 
-A **preprint** describing the method and introducing a novel benchmarking platform is available:  
+A manuscript describing the method and introducing a novel benchmarking platform is available:  
 [Kasmaeifar et al. (Nature Communications, 2025) _Computational design and evaluation of optimal bait sets for scalable proximity proteomics_](https://www.nature.com/articles/s41467-025-64383-1)
 
 ---
